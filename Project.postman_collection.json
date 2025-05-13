@@ -1,0 +1,261 @@
+{
+	"info": {
+		"_postman_id": "ef2173f2-d1e5-4acd-8528-ef8ccb176ad1",
+		"name": "Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39543922"
+	},
+	"item": [
+		{
+			"name": "StudentManagement",
+			"item": [
+				{
+					"name": "Add student",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ID\": \"123456789\",\r\n    \"Name\": \"John Doe\",\r\n    \"Password\": \"123456789\",\r\n    \"ExeList\": [],\r\n    \"TestGrade\": {\r\n        \"ExeNumber\": 99,\r\n        \"Name\": \"Test\",\r\n        \"Comment\": \"qwertyuio\",\r\n        \"GradeNumber\": 100\r\n    } // אם TestGrade הוא אובייקט\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7181/api/StudentManagement/AddStudent",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7181",
+							"path": [
+								"api",
+								"StudentManagement",
+								"AddStudent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Display all students",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7181/api/StudentManagement/DisplayAllStudents",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7181",
+							"path": [
+								"api",
+								"StudentManagement",
+								"DisplayAllStudents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove student by id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Edit student",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7181/api/StudentManagement/EditStudent?id=11111111&newName=\"Sara - new\"",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7181",
+							"path": [
+								"api",
+								"StudentManagement",
+								"EditStudent"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11111111"
+								},
+								{
+									"key": "newName",
+									"value": "\"Sara - new\""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DisplayAllGradesToStudent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7181/api/StudentManagement/DisplayAllGradesToStudent?id=11111111",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7181",
+							"path": [
+								"api",
+								"StudentManagement",
+								"DisplayAllGradesToStudent"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11111111"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GradesManagement",
+			"item": [
+				{
+					"name": "AddGradesToStudents",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "EditGradeToStudent",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"ExeNumber\": 5,\r\n        \"Name\": \"Algorithm\",\r\n        \"Comment\": \"Not bad!\",\r\n        \"GradeNumber\": 65\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:7181/api/GradesManagement/EditGradeToStudent?id=11111111",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7181",
+							"path": [
+								"api",
+								"GradesManagement",
+								"EditGradeToStudent"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "11111111"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DisplayAllGradesOfSpecificExercise",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:7181/api/GradesManagement/DisplayAllGradesOfSpecificExercise?exeNumber=2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "7181",
+							"path": [
+								"api",
+								"GradesManagement",
+								"DisplayAllGradesOfSpecificExercise"
+							],
+							"query": [
+								{
+									"key": "exeNumber",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CalculateFinalGrade",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ShowAllGradesToAllStudents",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ViewingTheGrade",
+			"item": [
+				{
+					"name": "ViewingGradeOfTheLastSubmission",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ViewingExeGrade",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ViewTestGrade",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ViewingTheFinalGrade",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
